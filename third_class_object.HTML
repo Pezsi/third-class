@@ -1,0 +1,69 @@
+
+<script>
+let student = {
+    name: "John",
+    age: 16,
+    class: "10.B"
+};
+
+console.log(student);
+
+let teacher = new Object();
+teacher.name = "Steven Kovacs";
+teacher.subject = "Mathematics";
+teacher.yearsOfExperience = 5; // 5 év tapasztalat
+
+
+console.log(teacher);
+
+
+// Pont notációval
+console.log(student.name); // Kimenet: "John"
+
+// Zárójel notációval
+console.log(student["class"]); // Kimenet: "10.B"
+
+// Tulajdonság módosítása
+student.age = 17;
+console.log(student.age); // Kimenet: 17
+
+// Új tulajdonság hozzáadása
+student.residence = "Budapest";
+console.log(student);
+
+
+delete student.residence;
+console.log(student);
+
+
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+Person.prototype.getFullName = function() {
+    return this.firstName + " " + this.lastName;
+}
+
+let john = new Person("John", "Doe");
+console.log(john.getFullName()); // Kimenet: "John Doe"
+
+
+function Student(firstName, lastName, grade) {
+    Person.call(this, firstName, lastName); // Örökölt tulajdonságok
+    this.grade = grade;
+}
+
+// Öröklődés beállítása
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+Student.prototype.getDetails = function() {
+    return this.getFullName() + ", Grade: " + this.grade;
+}
+
+let jane = new Student("Jane", "Smith", "10.B");
+console.log(jane.getDetails()); // Kimenet: "Jane Smith, Grade: 10.B"
+
+
+</script>

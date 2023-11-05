@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menü Demó</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>Hamburger Menü Demó</header>
+
+<div class="hamburger-menu">
+    &#9776; <!-- Ez a három vonalas ikon -->
+</div>
+
+<nav class="nav-menu" hidden>
+    <ul>
+        <li><a href="#">Kezdőlap</a></li>
+        <li><a href="#">Rólunk</a></li>
+        <li><a href="#">Termékek</a></li>
+        <li><a href="#">Kapcsolat</a></li>
+    </ul>
+</nav>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
+<style>
+    .hamburger-menu {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    background-color: #eee;
+    padding: 10px;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 5px 0;
+}
+
+</style>
+<script>
+    $(document).ready(function() {
+    $('.hamburger-menu').click(function() {
+        $('.nav-menu').slideToggle();
+    });
+});
+
+</script>
